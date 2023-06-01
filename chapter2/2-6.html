@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"> 
+<title>셀렉터 만들기</title> 
+<style>
+h3, li { /* 태그 이름 셀렉터 */
+color : brown; }
+/* h3와 li의 색깔을 갈색으로 */
+
+div > div > strong { /* 자식 셀렉터 */
+background : yellow; }
+/* div 속 div의 strong들은 배경화면을 노란색으로  */
+
+ul strong { /* 자손 셀렉터 */
+color : dodgerblue; }
+/* ul의 strong의 색깔을 모두 파란색으로 */
+
+.warning { /* class 셀렉터 */
+color : red; }
+/* warning인 클래스들의 글씨 색깔을 모두 빨간색으로  */
+
+body.main { /* class 셀렉터 */
+background : aliceblue; }
+/* body의 main클래스의 배경화면은 모두 aliceblue로 */
+
+#list { /* id 셀렉터 */
+background : mistyrose; }
+/* id가 list인 것들의 배경은 붉은 색으로 */
+
+#list span{ /* 자손 셀렉터 */
+color : forestgreen; }
+/* id가 list에서 span 태그의 색깔을 모두 초록색으로 */
+
+h3:first-letter { /* 가상 클래스 셀렉터 */
+color : red; }
+/* he의 첫번째 글자를 모두 빨간색으로 */
+
+li:hover { /* 가상 클래스 셀렉터 */
+background : yellowgreen; }
+/* 마우스 커서를 갖다댔을 때 yellowgreen색깔로 */
+
+</style>
+</head>
+<body class="main"> <h3>Web Programming</h3> <hr>
+    <div>
+        <div>2학기 <strong>학습 내용</strong>입니다.</div> 
+        <ul id="list">
+            <li><span>HTML5</span></li> 
+            <li><strong>CSS</strong></li> 
+            <!-- 
+                "li { color: brown; }"이 태그 선택자이고, 
+                "ul strong { color: dodgerblue; }"이 태그 선택자와 자손 선택자를 
+                모두 포함하므로 특정성이 더 높습니다. 따라서 같은 요소에 대해 두 가지 스타일이 적용될 경우, 
+                "ul strong"의 스타일이 우선 적용되므로 strong 태그의 글씨 색깔이 dodgerblue가 됩니다. 
+            -->
+            <li>JAVASCRIPT</li>
+        </ul>
+    <div class="warning">60점 이하는 F</div> </div>
+</body> 
+</html>

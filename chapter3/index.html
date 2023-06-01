@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Copilot</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    // 1. fetch API post
+    // 이름을 인자로 받아 인사하는 함수
+function greeting(name) {
+    alert('Hello ' + name);
+}
+
+// 콜백 함수를 인자로 받아 사용자 입력을 처리하는 함수
+function processUserInput(callback) {
+    // 사용자로부터 이름을 입력받음
+    var name = prompt('Please enter your name.');
+    // 입력받은 이름을 콜백 함수로 전달하여 실행
+    callback(name);
+}
+
+// processUserInput 함수를 실행하면서 greeting 함수를 콜백 함수로 전달
+processUserInput(greeting);
+</script>
+</body>
+</html>
