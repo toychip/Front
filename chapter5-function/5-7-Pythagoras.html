@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>함수예제</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+
+// 함수를 선언합니다.
+function callTenTimes(callback) {
+    // 10회 반복합니다.
+    for (var i = 0; i < 10; i++) {
+        // 매개변수로 전달된 함수를 호출합니다.
+        callback();
+    }
+}
+
+// 변수를 선언합니다.
+var callback = function () {
+    alert('함수 호출'); 
+};
+// 함수를 호출합니다.
+callTenTimes(callback);
+</script>
+</body>
+
+</html>

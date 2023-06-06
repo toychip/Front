@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+// function sumAll() {
+//     alert(typeof (arguments) + ' : ' + arguments.length);
+//     }
+//     sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+
+
+
+function sumAll() {
+    var output = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        output += arguments[i]; 
+    }
+    return output;
+}
+// 함수를 호출 및 출력합니다.
+alert(sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9))
+</script>
+</body>
+</html>
