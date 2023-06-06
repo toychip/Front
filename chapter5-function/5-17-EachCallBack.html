@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>함수예제</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        for (var i = 0; i < 3; i++) { // 0부터 2까지 3번 반복하는 for문
+            (function (closed_i) { // 즉시 실행 함수로 i값을 매개변수로 받아오는 함수를 만듦
+                setTimeout(function () { // setTimeout 함수를 이용하여 비동기적으로 alert창을 띄움
+                    alert(closed_i); // 즉시 실행 함수에서 받아온 i값을 alert창에 띄움
+                }, 0); // 0초 후에 alert창을 띄움
+            })(i); // i값을 즉시 실행 함수의 매개변수로 전달
+        }
+        // 이 둘이 다른 코드라고 가정할대 setTimeout함수는 다른 스크립트가 전부 끝나야 진행하므로 뒤에 0을 넣어서 오류 해결
+        [0, 1, 2].forEach(function (i) { // 0부터 2까지 3번 반복하는 forEach문
+            setTimeout(function () {
+                alert(i); // setTimeout 함수를 이용하여 비동기적으로 alert창을 띄움
+            }, 0);
+        }); // 0초 후에 alert창을 띄움
+
+    </script>
+</body>
+
+</html>

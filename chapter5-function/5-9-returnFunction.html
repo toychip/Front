@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>함수예제</title> 
-<style>
-</style>
+    <title>함수예제</title>
+    <style>
+    </style>
 </head>
+
 <body>
-<script>
-    // 함수를 생성합니다. 
-    function returnFunction() {
-        return function () { alert('Hello Function .. !');
-    }; 
-}
-    // 함수를 호출합니다.
-    returnFunction();
-</script>
+    <script>
+        // 함수를 생성합니다. 
+        function returnFunction() {
+            return function () {
+                alert('Hello Function .. !'); // 함수 내부에서 'Hello Function .. !'를 출력하는 함수를 반환합니다.
+            };
+        }
+        // 함수를 호출합니다.
+        returnFunction()(); // 반환된 함수를 호출합니다.
+    
+// 이 코드는 JavaScript에서 '고차 함수'(higher-order function)를 사용하는 예제
+// 고차 함수란 함수를 인자로 받거나 함수를 반환하는 함수를 말함.
+// returnFunction()이 호출될 때, 그 결과로 또 다른 함수가 반환됨. 
+// 즉, returnFunction()의 결과는 함수. 따라서 이것이 바로 호출될 수 있음. 
+// 그래서 returnFunction() 다음에 또 다른 괄호 쌍 ()가 붙어있음. 
+// 이 두 번째 괄호 쌍은 returnFunction()의 결과(함수)를 호출하기 위한 것.
+// 간단하게 설명하면, returnFunction()()는 'returnFunction을 실행하고, 그 결과로 반환된 함수를 바로 실행하라'는 의미. 
+// 그 결과로 'Hello Function .. !'라는 메시지가 alert 창으로 띄워집니다.
+    </script>
 </body>
+
 </html>

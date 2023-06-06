@@ -9,17 +9,20 @@
 <script>
 var base = 'Hello, '; 
 function sayHelloTo(name) {
-var text = base + name; return function() {
-              alert(text);
-           };
+var text = base + name; 
+    return function() {
+        alert(text);
+    };
 }
-// var hello1 = sayHelloTo('승민'); 
-// var hello2 = sayHelloTo('현섭'); 
-// var hello3 = sayHelloTo('유근'); 
-// hello1(); // 'Hello, 승민' 
-// hello2(); // 'Hello, 현섭' 
-// hello3(); // 'Hello, 유근
-sayHelloTo('승민')()
+var hello1 = sayHelloTo('승민'); 
+var hello2 = sayHelloTo('현섭'); 
+var hello3 = sayHelloTo('유근'); 
+hello1(); // 'Hello, 승민' 
+hello2(); // 'Hello, 현섭' 
+hello3(); // 'Hello, 유근
+
+// sayHelloTo('승민')()
+// 방금 5-9를 인용
 </script>
 </body>
 </html>

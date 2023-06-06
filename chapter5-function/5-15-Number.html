@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+var won = '1000원';
+var dollar = '1.5$';
+alert('Number(), ' + Number(won) + ' : ' + Number(dollar));
+// 결과값 NaN: NaN
+// Number() 함수는 숫자로 바꿀 수 없으면 Nan로 변환함
+
+// parse~() 함수는 변환할 수 있는 부분까지 모두 숫자로 변환
+alert('parseInt, '+parseInt(won) + ' : ' + parseInt(dollar)); 
+alert('parseFloat, ' + parseFloat(won) + ' : ' + parseFloat(dollar));
+
+// 자바스크립트에서 0,0X로 시작하면 10진수가 아닌 8진수,16진수로 변환
+
+// parseInt ('0x273') -> 627
+// parseInt ('273') -> 273
+// parseInt ('0273') -> 187
+
+// parseInt ('FF', 16) -> 255
+// parseInt ('52', 10) -> 52
+// parseInt ('11', 8) -> 9
+// parseInt ('10', 2) -> 2
+</script>
+</body>
+</html>

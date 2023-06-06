@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+alert('A');
+setTimeout(function () { alert('B');
+}, 0);
+alert('C');
+// 실행 순서 A -> b -> C
+// 다른 코드의 실행이 끝나기 전에 실행되지 않는다. 
+// 타이머, 웹 요청관련 함수
+
+// 아래의 코드만 있다고 가정할 때,while(true)이므로 무한으로 대기한다. 
+// 이게 끝나야 function(){alert~가 동작할텐데 끝나지 않아서 무한 대기} 
+setTimeout(function () {
+alert('Set Timeout'); }, 0);
+while (true) { }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>함수예제</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        // 1초마다 현재 시간을 알려주는 알림창을 띄우는 함수
+        var intervalID = setInterval(function () {
+            alert('<p>' + new Date() + '</p>');
+        }, 1000);
+        // 10초 후에 위에서 설정한 함수를 멈추는 함수
+        setTimeout(function () {
+            clearInterval(intervalID);
+        }, 10000);
+    </script>
+</body>
+
+</html>

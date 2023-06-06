@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+
+// 함수를 선언합니다.
+// 매개변수를 초기화합니다. 
+
+function test(a, b, c) {
+
+if (!b) { // 변수 b가 undefined, null, 0, NaN, 빈 문자열(""), false 중 하나일 경우에
+    b = 52; 
+}
+
+
+if (!c) { 
+    c = 273; 
+}
+
+// 출력합니다.
+alert(a + ':' + b + ':' + c); }
+
+// 함수를 호출합니다.
+test(1, 2);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>함수예제</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+
+        function test(a, b, c) { // test 함수 선언, 매개변수 a, b, c
+            b = b || 52; // b가 undefined이면 52로 초기화
+            c = c || 273; // c가 undefined이면 273으로 초기화
+            alert(a + ':' + b + ':' + c); // a, b, c 값을 alert으로 출력
+        }
+
+        function test2(a, b = 52, c = 273) {
+        // 출력합니다.
+        alert(a + ':' + b + ':' + c); }
+
+
+        test(1, 2); // test 함수 호출, a=1, b=2, c=undefined
+        
+        // 둘의 결과는 똑같이 1:2:273
+        
+    </script>
+</body>
+
+</html>
