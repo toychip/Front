@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    function test(options) {
+        options.valueA = options.valueA || 10;
+        options.valueB = options.valueB || 20;
+        options.valueC = options.valueC || 30;
+        alert(options.valueA + ':' + options.valueB + ':' + options.valueC);
+    }
+    test({
+        valueA: 52,
+        valueC: 273
+    });
+    // 출력값 : 52:20:273
+
+// true || true; // true
+// true || false; // true
+// false || true; // true
+// false || false; // false
+// false || "" || 500 || 300; // 500
+</script>
+</body>
+</html>

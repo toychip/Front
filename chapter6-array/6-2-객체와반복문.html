@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    // 객체는 단순 for 반복문으로 객체의 속성을 살펴보는 것이 불가능
+    // 객체의 속성을 모두 살펴보려면 for in 반복문 사용
+    
+    var product = {
+        name: 'Microsoft Visual Studio 2015 Ultimate', 
+        price: '15,000,000원',
+        language: '한국어',
+        supportOS: 'Win 32/64',
+        subscription: true 
+    };
+    // 출력합니다.
+    var output = '';
+    for (var key in product) {
+        output += '●' + key + ': ' + product[key] + '\n'; 
+    }
+    alert(output)
+</script>
+</body>
+</html>

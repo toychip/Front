@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    function makeStudent(name, korean, math, english, science) {
+    var willReturn = { // 속성
+        이름: name, 
+        국어: korean, 
+        수학: math, 
+        영어: english, 
+        과학: science,
+
+        // 메서드
+
+        getSum: function () {
+            return this.국어 + this.수학 + this.영어 + this.과학; 
+        },
+        getAverage: function () { 
+            return this.getSum() / 4;
+        },
+        
+        toString: function () {
+            return this.이름 + '\t' + this.getSum() + '\t' + this.getAverage(); 
+        }
+    };
+    return willReturn;
+}
+
+var students = [];
+// 배열에 요소를 넣습니다. 
+students.push(makeStudent('윤인성', 87, 98, 88, 95)); 
+students.push(makeStudent('연하진', 92, 98, 96, 98)); 
+students.push(makeStudent('구지연', 76, 96, 94, 90)); 
+students.push(makeStudent('연하진', 92, 98, 96, 98)); // 출력합니다.
+
+var output = '이름\t총점\t평균\n';
+
+for (var i in students) {
+    output += students[i].toString() + '\n'; 
+}
+
+alert(output);
+</script>
+</body>
+</html>

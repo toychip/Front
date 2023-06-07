@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    // 객체를 복제하는 함수
+    function clone(obj) {
+        var output = {}; // 빈 객체 생성
+        for (var i in obj) { // 객체의 속성을 하나씩 순회
+            output[i] = obj[i]; // 속성을 복제하여 새 객체에 추가
+        }
+        return output; // 새 객체 반환
+    }
+
+    // 테스트합니다.
+    var original = { a: 10, b: 20 }; // 원본 객체 생성
+    var referenced = original; // 참조 변수에 원본 객체 할당
+    var cloned = clone(original); // 복제 함수를 사용하여 원본 객체를 복제하여 새 객체 생성
+    original.a = 20; // 원본 객체의 속성 값 변경
+
+    alert(JSON.stringify(referenced, null, 2)); // 참조 변수를 출력하여 원본 객체의 값이 변경되었는지 확인
+    alert(JSON.stringify(cloned, null, 2)); // 복제된 객체를 출력하여 원본 객체의 값이 변경되지 않았는지 확인
+
+
+
+//      var deepCloned = JSON.parse(JSON.stringify(original));   
+//      객체를 json으로 바꾸고 다시 객체로 바꾸면 완전히 새로운 객체가 탄생함. 
+//      이를 활용하여 깊은 복사를 실행할 수 있음 
+//      original.b.c = 40;
+//      console.log(deepCloned.b.c);  // 출력: 30
+
+</script>
+</body>
+</html>

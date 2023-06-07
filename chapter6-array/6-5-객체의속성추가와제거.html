@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+
+    //a와 b 두 속성의 새로운 객체 생성
+    const myobj = new Object(); 
+    myobj.a = 5;
+    myobj.b = 12;
+    // myobj={a:5, b:12}
+
+    // 하지만 const는 객체나 배열 같은 참조형 데이터를 다룰 때 조금 다르게 동작합니다. 
+    // const로 선언된 객체나 배열 자체를 다른 것으로 바꿀 수는 없지만, 그 안의 속성이나 요소는 변경할 수 있습니다. 
+    // 따라서 주어진 예시에서는 myobj 자체를 다른 객체로 바꿀 수는 없지만, myobj의 속성인 a와 b의 값을 바꾸는 것은 가능합니다.
+    delete myobj.a;
+    console.log ('a' in myobj); // 출력: false
+</script>
+</body>
+</html>

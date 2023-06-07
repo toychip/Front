@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    const obj = {       // 여기서 1은 프로퍼티 값 즉 객체의 기본 속성인 1은 복사되지만 'b'의 프로퍼티 값인 {c: 2} 객체는 복사되지 않는다.
+        a: 1,           // 대신 {c: 2} 객체의 참조값이 복사되어 obj와 copiedObj가 같은 객체를 참조하게 된다.
+        b: {
+            c: 2,
+        },
+    };
+    const copiedObj = { ...obj };
+    copiedObj.b.c = 3;
+    console.log(obj === copiedObj); // false 
+    console.log(obj.b.c === copiedObj.b.c); // true
+</script>
+</body>
+</html>

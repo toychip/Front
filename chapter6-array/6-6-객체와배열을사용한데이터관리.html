@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    // 추상화 : 현실에 존재하는 객체의 필요한 속성을 추출하는 작업
+    var student0 = { 이름: '윤인성', 국어: 87, 수학: 98, 영어: 88, 과학: 95 };
+    // 같은 용도
+    // students.push({ 이름: '윤인성', 국어: 87, 수학: 98, 영어: 88, 과학: 95 });
+
+    var student1 = { 이름: '연하진', 국어: 92, 수학: 98, 영어: 96, 과학: 98 };
+    var student2 = { 이름: '구지연', 국어: 76, 수학: 96, 영어: 94, 과학: 90 };
+
+    // 학생들의 정보를 반복문을 통해 처리합니다.
+    for (var i in students) {
+        // 총점을 구하는 메서드를 추가합니다. 
+        students[i].getSum = function () {
+            return this.국어 + this.수학 + this.영어 + this.과학;
+        };
+        // 평균을 구하는 메서드를 추가합니다. 
+        students[i].getAverage = function () {
+            return this.getSum() / 4;
+        };
+    }
+</script>
+</body>
+</html>
