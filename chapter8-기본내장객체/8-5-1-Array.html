@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    var array1 = [52, 273, 103, 57, 32]; // array1 변수에 5개의 숫자를 가진 배열을 할당한다.
+    var array2 = new Array(); // array2 변수에 빈 배열을 할당한다.
+    var array3 = new Array(10); // array3 변수에 10개의 undefined 값을 가진 배열을 할당한다.
+    var array4 = new Array(52, 273, 103, 57, 32); // array4 변수에 5개의 숫자를 가진 배열을 할당한다.
+
+    var array = ['A', 'B', 'C', 'D'];
+    // 출력합니다.
+    var output = '';
+    for (var i = 0; i < array.length; i++) {
+    output += i + ' : ' + array[i] + '\n'; }
+    alert(output);
+
+    //출력값: 
+    // 0 : A
+    // 1 : B
+    // 2 : C
+    // 3 : D
+
+
+</script>
+</body>
+</html>

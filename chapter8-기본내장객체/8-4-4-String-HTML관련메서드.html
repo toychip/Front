@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+var temp = new String()
+temp.anchor()   // <a name="temp">temp</a>를 반환합니다. a태그로 문자열을 감싸 리턴합니다.
+temp.big()   // <big>temp</big>를 반환합니다. big태그로 문자열을 감싸 리턴합니다.
+temp.blink()   // <blink>temp</blink>를 반환합니다. blink태그로 문자열을 감싸 리턴합니다.
+temp.bold()   // <b>temp</b>를 반환합니다. b태그로 문자열을 감싸 리턴합니다.
+temp.fixed()   // <tt>temp</tt>를 반환합니다. tt태그로 문자열을 감싸 리턴합니다.
+temp.fontcolor(color)   // <font color="color">temp</font>를 반환합니다. font태그로 문자열을 감싸 리턴합니다.
+temp.fontsize(size)   // <font size="size">temp</font>를 반환합니다. font태그로 문자열을 감싸 리턴합니다.
+temp.italics()   // <i>temp</i>를 반환합니다. i태그로 문자열을 감싸 리턴합니다.
+temp.link(url)   // <a href="url">temp</a>를 반환합니다. a태그로 문자열을 감싸 리턴합니다.
+temp.small()   // <small>temp</small>를 반환합니다. small태그로 문자열을 감싸 리턴합니다.
+temp.strike()   // <strike>temp</strike>를 반환합니다. strike태그로 문자열을 감싸 리턴합니다.
+temp.sub()   // <sub>temp</sub>를 반환합니다. sub태그로 문자열을 감싸 리턴합니다.
+temp.sup()   // <sup>temp</sup>를 반환합니다. sup태그로 문자열을 감싸 리턴합니다.
+
+var string = 'JavaScript';
+var output = '';
+output += 'anchor: ' + string.anchor() + '<br/>';
+output += 'big: ' + string.big() + '<br/>';
+output += 'blink: ' + string.blink() + '<br/>';
+output += 'bold: ' + string.bold() + '<br/>';
+output += 'fixed: ' + string.fixed() + '<br/>';
+output += 'string: ' + string.fontcolor('red') + '<br/>';
+output += 'fontsize: ' + string.fontsize(15) + '<br/>';
+output += 'italics: ' + string.italics() + '<br/>';
+output += 'link: ' + string.link('http://hanbit.co.kr') + '<br/>'; output += 'small: ' + string.small() + '<br/>';
+output += 'strike: ' + string.strike() + '<br/>';
+output += 'sub: ' + string.sub() + '<br/>';
+output += 'sup: ' + string.sup() + '<br/>';
+document.write(output);
+alert(output);
+
+// 출력값: anchor: <a name="JavaScript">JavaScript</a>
+// 출력값: big: <big>JavaScript</big>
+// 출력값: blink: <blink>JavaScript</blink>
+// 출력값: bold: <b>JavaScript</b>
+// 출력값: fixed: <tt>JavaScript</tt>
+// 출력값: string: <font color="red">JavaScript</font>
+// 출력값: fontsize: <font size="15">JavaScript</font>
+// 출력값: italics: <i>JavaScript</i>
+// 출력값: link: <a href="http://hanbit.co.kr">JavaScript</a>
+// 출력값: small: <small>JavaScript</small>
+// 출력값: strike: <strike>JavaScript</strike>
+// 출력값: sub: <sub>JavaScript</sub>
+// 출력값: sup: <sup>JavaScript</sup>
+</script>
+</body>
+</html>

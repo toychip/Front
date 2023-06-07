@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    var characters = prompt('사용할 비밀번호를 입력해주세요.', '6글자 이상'); // 출력합니다.
+    if (characters.length < 6) {
+    alert('6글자 이상으로 입력하세요.'); 
+} else {
+    alert('잘했어요!'); 
+}
+
+// ---------------------------------- String 객체의 메서드 ----------------------------------
+var temp = new String()
+temp.charAt(prsition)   // position 위치의 문자를 반환합니다.
+temp.charCodeAt(position)   // position 위치의 문자의 유니코드 값을 반환합니다.
+temp.concat(string1, string2, ...)   // 문자열을 연결합니다.
+temp.indexOf(searchString, position)   // position 위치부터 searchString의 위치를 반환합니다.
+temp.lastIndexOf(searchString, position)   // position 위치부터 searchString의 위치를 반환합니다.
+temp.match(regExp)   // 문자열 내에 regExp와 일치하는 문자열을 검색합니다.
+temp.replace(regExp, replacement)   // 문자열 내에 regExp와 일치하는 문자열을 replacement로 대체합니다.
+temp.search(regExp)   // 문자열 내에 regExp와 일치하는 문자열을 검색합니다.
+temp.slice(start, end)   // start부터 end까지의 문자열을 반환합니다.
+temp.split(separator, limit)   // 문자열을 separator로 분할하여 배열로 반환합니다.
+temp.substr(start, length)   // start부터 length만큼의 문자열을 반환합니다.
+temp.substring(start, end)   // start부터 end까지의 문자열을 반환합니다.
+temp.toLowerCase()   // 문자열을 소문자로 변환합니다.
+temp.toUpperCase()   // 문자열을 대문자로 변환합니다.
+temp.toString()   // 문자열을 반환합니다.
+temp.valueOf()   // 문자열을 반환합니다.
+
+</script>
+</body>
+</html>

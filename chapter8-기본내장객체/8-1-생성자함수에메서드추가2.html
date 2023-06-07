@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>8장</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        // 변수를 만듭니다.
+        var primitiveNumber = 273;      // 기본적으로 Number객체로 자동변환하기 때문에 Number.prototype에 정의된 Method를 사용할 수 있다.
+        var objectNumber = new Number(273);
+        // 메서드를 추가합니다.
+        Number.prototype.method = function () {
+            return 'Method on Prototype';
+        };
+        // 메서드를 실행합니다.
+        var output = '';
+        output += primitiveNumber.method() + '\n'; output += objectNumber.method();
+        // 출력합니다.
+        alert(output);
+    </script>
+</body>
+
+</html>

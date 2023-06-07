@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+
+var object = new Object(); // 출력합니다. 
+alert(object); 
+alert(object.toString());
+// 결과 값: object Object
+// 그 이유는 object 변수는 Object이기 때문
+
+
+// alert(object)를 호출하면 브라우저는 object를 문자열로 변환하여 경고창에 출력하려고 시도합니다. 
+// 이때 object.toString() 메서드가 자동으로 호출되며, 기본 Object.prototype.
+// toString() 메서드는 일반적으로 "[object Object]"라는 문자열을 반환합니다. 
+// 이 문자열은 "[object " + 타입명 + "]" 형식을 갖는데, 이 경우에는 객체 타입이므로 "Object"가 출력되는 것입니다.
+// 그러므로 alert(object)와 alert(object.toString()) 
+// 두 줄은 사실상 동일한 결과, 즉 "[object Object]"를 출력합니다. 
+// 이는 해당 object가 자바스크립트의 기본 객체(Object)임을 나타내는 표현입니다. 
+// 다른 객체(예: Array, Function 등)에서 toString()을 호출하면 "[object Array]", "[object Function]" 등과 같은 결과를 얻게 됩니다.
+</script>
+</body>
+</html>

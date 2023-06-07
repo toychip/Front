@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+Object.prototype.test = function () {
+    alert(this); 
+};
+// Number 객체의 test( ) 메서드를 호출합니다. 
+var number = 273;
+number.test()
+// 결과 값 : 273
+</script>
+</body>
+</html>

@@ -28,31 +28,35 @@ return this._width * this._height; }
 }
 const rectangle = new Rectangle(100, 200); 
 rectangle.width = 200; 
-// rectangle._setwi
 alert(rectangle.width); 
 alert(rectangle.getArea());
 
 
+function Rectangle(w, h) {
+// 변수를 선언합니다. 
+var width = w;
+var height = h;
+// 메서드를 선언합니다.
+this.getWidth = function () { return width; }; 
+this.getHeight = function () { return height; }; 
+this.setWidth = function (w) {
+if (w < 0) {
+throw '길이는 음수일 수 없습니다.';
+} else {
+width = w;
+} 
+};
+this.setHeight = function (h) { 
+    if (h < 0) {
+        throw '길이는 음수일 수 없습니다.'; } else {
+        height = h; }
+    }; 
+}
+Rectangle.prototype.getArea = function () { return this.getWidth() * this.getHeight();
+// 
+};
 
-
-// 생성자 함수를 선언합니다. 
-// function Rectangle(w, h) {
-// // 변수를 선언합니다. 
-// var width = w;
-// var height = h;
-// // 메서드를 선언합니다.
-// this.getWidth = function () { return width; }; this.getHeight = function () { return height; }; this.setWidth = function (w) {
-// if (w < 0) {
-// throw '길이는 음수일 수 없습니다.';
-// } else {
-// width = w;
-// } };
-// this.setHeight = function (h) { if (h < 0) {
-// throw '길이는 음수일 수 없습니다.'; } else {
-// height = h; }
-// }; }
-// Rectangle.prototype.getArea = function () { return this.getWidth() * this.getHeight();
-// };
+alert()
 </script>
 </body>
 </html>

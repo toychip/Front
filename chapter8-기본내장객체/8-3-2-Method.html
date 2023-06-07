@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+// 변수를 선언합니다.
+var number = 273.5210332;
+
+// 출력합니다.
+var output = '';
+
+output += number.toFixed(1) + '\n'; 
+// 출력값: 273.5
+output += number.toFixed(4); 
+// 출력값: 273.5210
+
+alert(output);
+
+output.toExpotential(4);    // 지수 표시로 나타낸 문자열을 리턴
+output.toPrecision(4);      // 숫자를 길이에 따라 지수 표시 또는 고정 소수점 표시로 나타낸 문자열을 리턴
+output.tpFixed(4);          // 고정 소수점 표시로 나타낸 문자열을 리턴
+
+</script>
+</body>
+</html>

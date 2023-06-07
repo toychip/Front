@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+var students = [];
+// 배열에 요소를 넣습니다.
+students.push({ 이름: '윤인성', 국어: 87, 수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '연하진', 국어: 92, 수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '구지연', 국어: 76,수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '나선주', 국어: 98, 수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '윤아린', 국어: 95, 수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '윤명월', 국어: 64, 수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '김미화', 국어: 82, 수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '김연화', 국어: 88, 수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '박아현', 국어: 97, 수학: 98, 영어: 88, 과학: 95 });
+students.push({ 이름: '서준서', 국어: 45, 수학: 98, 영어: 88, 과학: 95 });
+// 과학 성적이 90점 넘는 학생을 필터링합니다.
+var filteredA = students.filter(function (item) {
+
+return item.과학 > 90; });
+alert(filteredA);
+// 평균이 90점 넘는 학생을 필터링합니다.
+var filteredB = students.filter(function (item) {
+    return ((item.국어 + item.수학 + item.영어 + item.과학) / 4) > 90; });
+alert(filteredB);
+
+// 과학 성적이 90점 넘는 학생을 필터링합니다.
+var filteredA = students.filter((item) => item.과학 > 90);
+alert(filteredA);
+// 평균이 90점 넘는 학생을 필터링합니다.
+var filteredB = students.filter((i) => ((i.국어 + i.수학 + i.영어 + i.과학) / 4) > 90); alert(filteredB);
+
+</script>
+</body>
+</html>

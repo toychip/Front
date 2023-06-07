@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+var number = Number.MAX_VALUE + 1; // 출력합니다.
+// MAX_VALUE와 출력 값이 같음
+alert(number);
+// 출력값: 1.7976931348623157e+308
+// 최대 수에 1을 더했음에도 오류 없이 출력
+
+var addNumber = Number('0.0000000000000001e+308'); 
+var number = Number.MAX_VALUE + addNumber;
+// 출력합니다.
+alert(number);
+// 출력값: Infinity 
+</script>
+</body>
+</html>
