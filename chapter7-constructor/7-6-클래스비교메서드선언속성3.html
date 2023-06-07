@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+class Rectangle { constructor(width, height) {
+this._width = width;
+this._height = height; }
+// width의 게터와 세터 
+get width() {
+return this._width; }
+set width(input) { 
+    this._width = input;
+
+}
+// height의 게터와 세터 
+get height() {
+return this._height; }
+set height(input) { 
+    this._height = input;
+}
+getArea() {
+return this._width * this._height; }
+}
+const rectangle = new Rectangle(100, 200); 
+rectangle.width = 200; 
+// rectangle._setwi
+alert(rectangle.width); 
+alert(rectangle.getArea());
+
+
+
+
+// 생성자 함수를 선언합니다. 
+// function Rectangle(w, h) {
+// // 변수를 선언합니다. 
+// var width = w;
+// var height = h;
+// // 메서드를 선언합니다.
+// this.getWidth = function () { return width; }; this.getHeight = function () { return height; }; this.setWidth = function (w) {
+// if (w < 0) {
+// throw '길이는 음수일 수 없습니다.';
+// } else {
+// width = w;
+// } };
+// this.setHeight = function (h) { if (h < 0) {
+// throw '길이는 음수일 수 없습니다.'; } else {
+// height = h; }
+// }; }
+// Rectangle.prototype.getArea = function () { return this.getWidth() * this.getHeight();
+// };
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    function Person(){
+        this.hand = 2; this.body = 1; this.nose = 1;
+    }
+    var kim = new Person(); 
+    var lee = new Person(); 
+    alert(kim.hand); // 2 
+    alert(lee.hand); // 2
+
+    // 위와 같은 결과를 prototype을 이용하여 구현하면 아래와 같다.
+    // Person.prototype이라는 어떤 Object의 hand 라는 속성을 공유
+    function Person(){}
+    Person.prototype.hand = 2; 
+    Person.prototype.body = 1; 
+    Person.prototype.nose = 1;
+    let kim = new Person(); 
+    let lee = new Person();
+    alert(kim.hand) // 2
+    alert(lee.hand) // 2
+</script>
+</body>
+</html>

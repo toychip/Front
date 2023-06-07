@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>함수예제</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        // 생성자 함수를 선언합니다. 
+        function Rectangle(w, h) {
+            // 변수를 선언합니다.
+            var width = w; // 가로 길이 변수 선언
+            var height = h; // 세로 길이 변수 선언
+            // 메서드를 선언합니다.
+            this.getWidth = function () { // 가로 길이를 반환하는 메서드
+                return width;
+            };
+            this.getHeight = function () { // 세로 길이를 반환하는 메서드
+                return height;
+            };
+            this.setWidth = function (w) { // 가로 길이를 설정하는 메서드
+                if (w < 0) { // 가로 길이가 음수일 경우 예외 처리
+                    throw '길이는 음수일 수 없습니다.';
+                } else {
+                    width = w; // 가로 길이 설정
+                }
+            };
+            this.setHeight = function (h) { // 세로 길이를 설정하는 메서드
+                if (w < 0) // 세로 길이가 음수일 경우 예외 처리
+                {
+                    throw '길이는 음수일 수 없습니다.';
+                } else {
+                    height = h; // 세로 길이 설정
+                }
+            };
+        }
+        Rectangle.prototype.getArea = function () { // 사각형의 넓이를 반환하는 메서드
+            return this.getWidth() * this.getHeight();
+        };
+
+        // ------------------------------------------------------------
+
+        // 정사각형 생성자 함수
+        function Square(length) {
+            // 직사각형 생성자 함수를 상속받아 정사각형 생성
+            this.base = Rectangle;
+            this.base(length, length);
+        }
+        // 위의 코드는 사실상 동작하지 않습니다. 
+        // this.base = Rectangle;는 base라는 속성에 Rectangle 생성자 함수를 참조하는 것이지 
+        // 실제로 Rectangle 생성자 함수를 호출하거나, Square가 Rectangle의 속성을 상속하도록 만드는 것이 아닙니다. 
+        // 이 코드를 동작하게 만들려면 Rectangle.call(this, length, length);와 같이 
+        // call이나 apply 메소드를 사용하여 Rectangle 생성자 함수를 명시적으로 호출해야 합니다.
+
+        // 정사각형 프로토타입에 직사각형 프로토타입을 할당
+        Square.prototype = Rectangle.prototype;
+
+        // Square의 프로토타입은 Rectangle의 프로토타입을 가리키기 때문에 Square.prototype.constructor는 Rectangle를 가리킵니다.
+        //  프로토타입 기반 상속
+
+        // 정사각형 생성자 함수를 할당
+        Square.prototype.constructor = Square;
+
+        // 직사각형과 정사각형 객체 생성
+        var rectangle = new Rectangle(5, 7);
+        var square = new Square(5);
+        alert(square instanceof Rectangle); // 상속 확인
+        // 면적 출력
+        alert(rectangle.getArea() + ' : ' + square.getArea());
+
+
+        var student = new Student('윤하린', 96, 98, 92, 98); // 출력합니다. 
+//      존재하는가? 
+        alert(student instanceof Student); 
+        alert(student instanceof Number);
+        alert(student instanceof String);
+        alert(student instanceof Boolean);
+    </script>
+</body>
+</html>

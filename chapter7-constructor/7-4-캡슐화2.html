@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>함수예제</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <script>
+        // 생성자 함수를 선언합니다. 
+        function Rectangle(w, h) {
+            // 변수를 선언합니다.
+            var width = w; // 가로 길이 변수 선언
+            var height = h; // 세로 길이 변수 선언
+
+            // 메서드를 선언합니다.
+            this.getWidth = function () { // 가로 길이 반환 메서드
+                return width;
+            };
+            this.getHeight = function () { // 세로 길이 반환 메서드
+                return height;
+            };
+            this.setWidth = function (w) { // 가로 길이 설정 메서드
+                width = w;
+            };
+            this.setHeight = function (h) { // 세로 길이 설정 메서드
+                height = h;
+            };
+        }
+
+        Rectangle.prototype.getArea = function () { // 사각형의 넓이 반환 메서드
+            return this.width * this.height;
+        };
+
+        // 변수를 선언합니다.
+        var rectangle = new Rectangle(5, 7); // 가로 길이 5, 세로 길이 7인 사각형 객체 생성
+        rectangle.width = -2; // 가로 길이를 -2로 설정
+
+        // 출력합니다.
+        alert('AREA: ' + rectangle.getArea()); // 사각형의 넓이 출력
+    </script>
+</body>
+
+</html>

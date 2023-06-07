@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+    <script>
+    // 생성자 함수를 선언합니다.
+    function Rectangle(width, height) {
+        this.width = width; // width 속성을 생성자 함수의 인자로 초기화합니다.
+        this.height = height; // height 속성을 생성자 함수의 인자로 초기화합니다.
+    }
+    Rectangle.prototype.getArea = function () {
+        return this.width * this.height; // 너비와 높이를 곱한 값을 반환하는 메소드를 생성합니다.
+    };
+    // 변수를 선언합니다.
+    var rectangle = new Rectangle(5, 7); // Rectangle 생성자 함수를 이용하여 rectangle 객체를 생성합니다.
+    rectangle.width = -2; // width 속성에 -2를 할당합니다.
+    // 출력합니다.
+    alert('AREA: ' + rectangle.getArea()); // rectangle 객체의 getArea 메소드를 호출하여 면적을 출력합니다.
+    
+    </script>
+</body>
+</html>

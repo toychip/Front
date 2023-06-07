@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+    // Rectangle 클래스를 정의합니다.
+    class Rectangle {
+        // 생성자 함수를 정의합니다.
+        constructor(width, height) {
+            // 인스턴스 변수를 초기화합니다.
+            this.width = width;
+            this.height = height;
+        }
+        // 면적을 구하는 메서드를 정의합니다.
+        getArea() {
+            return this.width * this.height;
+        };
+    }
+
+    // Rectangle 클래스의 인스턴스를 생성합니다.
+    const rectangle = new Rectangle(100, 200);
+
+    // 면적을 출력합니다.
+    alert(rectangle.getArea());
+
+    // Rectangle 함수를 정의합니다.
+    function Rectangle(w, h) {
+        // 인스턴스 변수를 선언합니다.
+        var height = h;
+        // 인스턴스 메서드를 선언합니다.
+    }
+
+    // Rectangle.prototype 객체에 getArea 메서드를 추가합니다.
+    Rectangle.prototype.getArea = function () {
+        return this.getWidth() * this.getHeight();
+    };
+
+    // Rectangle 클래스의 인스턴스를 생성합니다.
+    var rectangle2 = new Rectangle(100, 200);
+
+    // 면적을 출력합니다.
+    alert(rectangle.getArea());
+</script>
+</body>
+</html>

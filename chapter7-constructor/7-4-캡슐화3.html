@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>함수예제</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+// 생성자 함수를 선언합니다. 
+function Rectangle(w, h) {
+    var width = w; // width 변수를 선언하고 w 매개변수를 할당합니다.
+    var height = h; // height 변수를 선언하고 h 매개변수를 할당합니다.
+    this.getWidth = function() { // getWidth 메소드를 선언합니다.
+        return width; // width 변수를 반환합니다.
+    };
+    this.getHeight = function() { // getHeight 메소드를 선언합니다.
+        return height; // height 변수를 반환합니다.
+    };
+    this.setWidth = function(w) { // setWidth 메소드를 선언합니다.
+        if (w < 0) { // w 매개변수가 0보다 작으면
+            throw '길이는 음수일 수 없습니다.'; // 예외를 발생시킵니다.
+        }
+        width = w; // width 변수에 w 매개변수를 할당합니다.
+    };
+    this.setWidth = function(h) { // setHeight 메소드를 선언합니다.
+        if (h < 0) { // h 매개변수가 0보다 작으면
+            throw '길이는 음수일 수 없습니다.'; // 예외를 발생시킵니다.
+        }
+        height = h; // height 변수에 h 매개변수를 할당합니다.
+    };
+}
+Rectangle.prototype.getArea = function() { // getArea 메소드를 선언합니다.
+    return this.getWidth() * this.getHeight(); // 너비와 높이를 곱해서 반환합니다.
+};
+// 변수를 선언합니다.
+var rectangle = new Rectangle(5, 7); 
+// Rectangle 생성자 함수를 이용하여 rectangle 객체를 생성합니다.
+rectangle.setWidth(-2); // setWidth 메소드를 호출하여 width 속성을 -2로 설정합니다.
+alert('AREA: ' + rectangle.getArea()); // rectangle 객체의 getArea 메소드를 호출하여 면적을 출력합니다.
+
+</script>
+</body>
+</html>
