@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+var child = window.open('', '', 'width=300, height=200'); // 출력합니다.
+child.moveBy(x, y); // 윈도의 위치를 상대적으로 이동합니다. x, y만큼 이동합니다.
+child.moveTo(x, y); // 윈도의 위치를 절대적으로 이동합니다. x, y로 이동합니다.
+child.resizeBy(x, y); // 윈도의 크기를 상대적으로 변경합니다. x, y만큼 변경합니다.
+child.resizeTo(x, y); // 윈도의 크기를 절대적으로 변경합니다. x, y로 변경합니다.
+child.scrollBy(x, y); // 윈도의 스크롤을 상대적으로 변경합니다. x, y만큼 변경합니다.
+child.scrollTo(x, y); // 윈도의 스크롤을 절대적으로 변경합니다. x, y로 변경합니다.
+child.focus(); // 윈도를 포커스합니다. 윈도에 초첨을 맞춥니다.
+child.blur(); // 윈도의 초점을 잃습니다. 윈도에 초첨을 잃습니다.
+child.close(); // 윈도를 닫습니다.
+
+    // 새 창을 엽니다.
+    var child = window.open('', '', 'width=300, height=200');
+    // 새 창을 (0, 0) 위치로 이동합니다.
+    child.moveTo(0, 0);
+    // 1초마다 함수를 실행합니다.
+    setInterval(function () {
+        // 새 창을 (10, 10) 만큼 이동합니다.
+        child.moveBy(10, 10);
+    }, 1000);
+</script>
+</body>
+</html>

@@ -23,6 +23,22 @@ var array = [52, 273, 103, 32];
 array.sort();
 // 출력합니다.
 alert(array);
+
+array.sort(function (left, right){
+    return left - right;// 오름차순
+});
+// 출력값: 32, 52, 103, 273
+
+array.sort(function (left, right){
+    return right - left;// 내림차순
+});
+// 출력값: 273, 103, 52, 32
+
+var array = [52, 273, 103, 32]; 
+array.sort(function (left, right) {
+return left - right; });
+// 출력합니다.
+// 32, 52, 103, 273
 </script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+// 웹 브라우저의 화면이 아닌 운영체제 화면의 속성을 가지는 객체
+// screen 객체의 속성
+var output = '';
+for (var key in screen) {
+output += '●' + key + ': ' + screen[key] + '\n'; }
+alert(output);
+//출력값 :
+//●availWidth: 1920
+//●availHeight: 1040
+//●width: 1920
+//●height: 1080
+//●colorDepth: 24
+//●pixelDepth: 24
+//●availLeft: 0
+//●availTop: 0
+//●left: 0
+//●top: 0
+
+
+screen.width; // 화면의 너비를 반환합니다.
+screen.height; // 화면의 높이를 반환합니다.
+screen.availWidth; // 실제 화면에서 사용 가능한 너비를 반환합니다.
+screen.availHeight; // 실제 화면에서 사용 가능한 높이를 반환합니다.
+screen.colorDepth; // 사용 가능한 색상 수를 반환합니다.
+screen.pixelDepth; // 픽셀 당 비트 수를 반환합니다.
+
+</script>
+</body>
+</html>

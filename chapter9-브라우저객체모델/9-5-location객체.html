@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+<style>
+</style>
+</head>
+<body>
+<script>
+// 브라우저의 주소 표시줄과 관련된 객체
+// location 객체는 프로토콜의 종류, 호스트 이름, 문서 위치 등의 정보가 있음
+var output = '';
+for (var key in location) {
+output += '●' + key + ': ' + location[key] + '\n'; }
+alert(output);
+// 출력값 :
+// ●href: http://localhost:8080/chapter9-브라우저객체모델/9-9-%20copy%206.html
+// ●ancestorOrigins: [object DOMStringList]
+// ●origin: http://localhost:8080
+// ●protocol: http:
+// ●host: localhost:8080
+// ●hostname: localhost
+// ●port: 8080
+// ●pathname: /chapter9-브라우저객체모델/9-9-%20copy%206.html
+// ●search:
+// ●hash:
+// ●assign: function assign() { [native code] }
+// ●reload: function reload() { [native code] }
+// ●replace: function replace() { [native code] }
+// ●toString: function toString() { [native code] }
+// ●valueOf: function valueOf() { [native code] }
+// ~~~
+//replace() 메서드는 뒤로 가기 버튼을 사용할 수 없음
+//assign(link) 현재 위치를 이동합니다.
+//reload() 현재 문서를 다시 불러옵니다.
+//replace(link) 현재 위치를 이동하면서 뒤로 가기 버튼을 사용할 수 없게 합니다.
+</script>
+</body>
+</html>

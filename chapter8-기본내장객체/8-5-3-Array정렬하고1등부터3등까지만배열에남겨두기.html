@@ -7,7 +7,17 @@
 </head>
 <body>
 <script>
-
+students.sort(function (left, right) {
+return right.getSum() - left.getSum(); 
+    }
+);
+students = students.slice(0, 3);
+// 아래와 같은 코드 
+    students = students.sort(function (left, right) {
+        // 학생들을 총점이 높은 순서대로 정렬합니다.
+        return right.getSum() - left.getSum();
+    }).slice(0, 3);
+// 정렬된 학생들 중 상위 3명만 선택합니다.
 </script>
 </body>
 </html>
