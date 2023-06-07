@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    // document.getElementsByTagName(태그이름) 해당 태그 이름의 요소를 모두 선택함
+    // document.getElementById(아이디) 해당 아이디의 요소를 선택함
+    // document.getElementsByClassName(클래스이름) 해당 클래스 이름의 요소를 모두 선택함
+    // document.getElementByName(name속성값) 해당 name 속성값을 가진 요소를 모두 선택함
+    // document.querySelector(선택자) 해당 선택자를 가진 요소를 선택함
+    // document.querySelectorAll(선택자) 해당 선택자를 가진 요소를 모두 선택함
+    window.onload = function () {
+        var header1 = document.getElementById('header-1');
+        var header2 = document.getElementById('header-2');
+         // 속성변경가능
+        header1.innerHTML = 'with getElementById()';
+    };
+
+</script>
+</head>
+<body>
+    <h1 id="header-1">Header</h1> 
+    <h1 id="header-2">Header</h1>
+</body>
+</html>

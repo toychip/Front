@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        window.onload = function () {
+            // 변수를 선언합니다.
+            var sun = document.getElementById('sun'); // 태양 요소를 가져옵니다.
+            var earth = document.getElementById('earth'); // 지구 요소를 가져옵니다.
+            var moon = document.getElementById('moon'); // 달 요소를 가져옵니다.
+
+            // 태양, 지구, 달의 위치를 설정합니다.
+            sun.style.position = 'absolute'; // 태양의 위치를 절대 위치로 설정합니다.
+            earth.style.position = 'absolute'; // 지구의 위치를 절대 위치로 설정합니다.
+            moon.style.position = 'absolute'; // 달의 위치를 절대 위치로 설정합니다.
+            sun.style.left = '250px'; // 태양의 가로 위치를 설정합니다.
+            sun.style.top = '200px'; // 태양의 세로 위치를 설정합니다.
+
+            var earthAngle = 0; // 지구의 각도를 초기화합니다.
+            var moonAngle = 0; // 달의 각도를 초기화합니다.
+            // 애니메이션을 시작합니다. 
+            setInterval(function () {
+                var earthLeft = 250 + 150 * Math.cos(earthAngle); // 지구의 가로 위치를 계산합니다.
+                var earthTop = 200 + 150 * Math.sin(earthAngle); // 지구의 세로 위치를 계산합니다.
+                var moonLeft = earthLeft + 50 * Math.cos(moonAngle); // 달의 가로 위치를 계산합니다.
+                var moonTop = earthTop + 50 * Math.sin(moonAngle); // 달의 세로 위치를 계산합니다.
+                earth.style.left = earthLeft + 'px'; // 지구의 가로 위치를 설정합니다.
+                earth.style.top = earthTop + 'px'; // 지구의 세로 위치를 설정합니다.
+                moon.style.left = moonLeft + 'px'; // 달의 가로 위치를 설정합니다.
+                moon.style.top = moonTop + 'px'; // 달의 세로 위치를 설정합니다.
+                earthAngle += 0.1; // 지구의 각도를 증가시킵니다.
+                moonAngle += 0.3; // 달의 각도를 증가시킵니다.
+            }, 1000 / 30); // 1/30초마다 애니메이션을 업데이트합니다.
+        };
+    </script>
+</head>
+
+<body>
+    <h1 id="sun">@</h1> <!-- 태양 요소를 추가합니다. -->
+    <h1 id="earth">O</h1> <!-- 지구 요소를 추가합니다. -->
+    <h1 id="moon">*</h1> <!-- 달 요소를 추가합니다. -->
+</body>
+
+</html>

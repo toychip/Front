@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        window.onload = function () {
+            // h1 요소 생성
+            var header = document.createElement('h1');
+            // 텍스트 노드 생성
+            var textNode = document.createTextNode('Hello DOM');
+            // 텍스트 노드를 h1 요소에 추가
+            header.appendChild(textNode);   // h1요소에 텍스트 ㄴ ㅗ드 추가
+            // body 요소에 h1 요소 추가
+            document.body.appendChild(header);  // 추가한걸 document.body에담음
+        };
+        // 화면에 문서를 출력하려면 생성한 문서 객체를 body 문서 객체에 연결
+        // 노드와 노드를 연결할 때 아래 메서드를 사용
+        // appendChild(node) : 객체에 노드를 연결함
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        // 페이지 로드 후 실행되는 함수
+        window.onload = function () {
+            // img 요소 생성
+            var img = document.createElement('img');
+            // img 요소의 src 속성 설정
+            img.src = 'Penguins.jpg';
+            // img 요소의 width 속성 설정
+            img.width = 500;
+            // img 요소의 height 속성 설정
+            img.height = 350;
+            // img 요소의 dataset 속성 설정
+            img.dataset.property = 350;
+            // body 요소의 자식 요소로 img 요소 추가
+            document.body.appendChild(img);
+        };
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

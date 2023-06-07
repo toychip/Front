@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>6장</title> 
+    <script>
+    // getElementById ( ) 메서드는 한 번에 한 가지 문서 객체만 가져올 수 있음
+    // document.getElementByName(name속성값) 해당 name 속성값을 가진 요소를 모두 선택함 
+    // document.getElementsByTagName(태그이름) 해당 태그 이름의 요소를 모두 선택함
+    window.onload = function () {
+        // 문서 객체를 가져옵니다.
+        var headers = document.getElementsByTagName('h1'); for (var i = 0; i < headers.length; i++) {
+            // 문서 객체의 속성을 변경합니다.
+            headers[i].innerHTML = 'with getElementsByTagName()'; }
+    };
+    </script>
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+</body>
+</html>

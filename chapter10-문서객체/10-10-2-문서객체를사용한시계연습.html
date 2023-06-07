@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        // window 객체의 onload 이벤트가 발생하면 함수 실행
+        window.onload = function () {
+            // id가 'clock'인 요소를 찾아 변수 clock에 할당
+            var clock = document.getElementById('clock');
+            // 1초마다 현재 시간을 문자열로 변환하여 clock 요소의 내용으로 설정
+            setInterval(function () {
+                clock.innerHTML = new Date().toString();
+            }, 1000);
+        };
+    </script>
+</head>
+
+<body>
+    <!-- 현재 시간을 표시할 요소 -->
+    <h1 id="clock"></h1>
+</body>
+
+</html>
