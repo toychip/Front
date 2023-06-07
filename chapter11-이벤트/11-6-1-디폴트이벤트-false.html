@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        window.onload = function () {
+            // 이벤트를 연결합니다. 
+            document.getElementById('my-form').onsubmit = function () {
+                return false; 
+            };
+};
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return whenSubmit()">
+        <!-- 폼 시작 -->
+        
+        <label for="name">이름</label><br /> 
+        <!-- 이름 라벨 -->
+
+        <input type="text" name="name" id="name" /><br /> 
+        <!-- 이름 입력 필드 -->
+
+        <label for="pass">비밀번호</label><br /> 
+        <!-- 비밀번호 라벨 -->
+
+        <input type="password" name="pass" id="pass" /><br /> 
+        <!-- 비밀번호 입력 필드 -->
+
+        <label for="pass-check">비밀번호 확인</label><br /> 
+        <!-- 비밀번호 확인 라벨 -->
+
+        <input type="password" id="pass-check" /><br /> 
+        <!-- 비밀번호 확인 입력 필드 -->
+
+        <input type="submit" value="제출" /> 
+        <!-- 제출 버튼 -->
+
+    </form> <!-- 폼 종료 -->
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        window.onload = function () {
+            // id가 'header'인 요소를 가져온다.
+            var header = document.getElementById('header');
+            // header 요소를 클릭했을 때 실행할 함수를 정의한다.
+            header.onclick = function () {
+                // '클릭'이라는 경고창을 띄운다.
+                alert('클릭');
+                // header 요소의 onclick 이벤트 핸들러를 null로 설정하여 클릭 이벤트를 제거한다. 1회성
+                header.onclick = null;
+            };
+        };
+
+    </script>
+</head>
+
+<body>
+    <!-- 클릭할 수 있는 'Click'이라는 텍스트를 가진 h1 요소를 생성한다. -->
+    <h1 id="header">Click</h1>
+</body>
+
+</html>

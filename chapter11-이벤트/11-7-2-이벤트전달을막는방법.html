@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        window.onload = function () {
+            // 페이지 로드 후 실행되는 함수
+            // header 요소를 클릭하면 'header' 알림창이 뜨도록 이벤트를 연결합니다.
+            document.getElementById('header').onclick = function () {
+                alert('header');
+            };
+
+            // paragraph 요소를 클릭하면 'paragraph' 알림창이 뜨도록 이벤트를 연결합니다.
+            document.getElementById('paragraph').onclick = function (e) {   // 여기서 e는 이벤트 헨들러 함수에 자동으로 전달되는 이벤트 객체를 가리킴.
+                // 이 코드는 표준 이벤트 모델과 IE의 이벤트 모델 사이의 호환성을 위한 것입니다. 
+                // 표준 모델은 이벤트 객체를 핸들러에게 인수로 제공하는 반면, IE 모델에서는 이벤트 객체를 전역 객체 window.event에 저장합니다. 
+                // 따라서 이 코드는 "표준 모델이 사용 가능한 경우 그것을 사용하고, 그렇지 않으면 IE 모델을 사용하라"는 뜻입니다
+
+            // 이벤트 객체를 처리합니다.
+            var event = e || window.event;
+
+            // 이벤트 발생을 알립니다.
+            alert('paragraph');
+
+            // 이벤트 전달을 제거합니다.
+            event.cancelBubble = true; 
+            // Internet Explorer에서 이벤트 버블링을 중지하는 방법입니다. 이 코드를 실행하면 이벤트가 상위 요소로 전파되는 것을 막을 수 있습니다.
+
+            if (event.stopPropagation) { 
+                event.stopPropagation();
+            }   
+            // event.stopPropagation()은 W3C 표준 모델에서 이벤트 버블링을 중지하는 방법입니다. 
+            // if (event.stopPropagation)는 stopPropagation 메서드가 있는지 확인하고, 있다면 호출합니다.
+            // 이렇게 하면 표준 모델을 지원하는 브라우저에서도 이벤트 전파를 중지할 수 있습니다.
+
+
+            // 따라서, 이 코드는 표준 모델과 IE 모델을 모두 지원하는 이벤트 버블링 중지 방법을 구현한 것입니다. 
+            // 이로써 이벤트는 <p> 요소에서만 처리되고, <h1> 요소로 전달되지 않습니다. 이것이 이 코드의 주된 목적입니다.
+        };
+    };
+    </script>
+</head>
+
+<body>
+    <h1 id="header">
+        <p id="paragraph">Paragraph</p>
+    </h1>
+</body>
+
+</html>

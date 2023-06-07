@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        // 페이지 로드 후 실행되는 함수
+        window.onload = function () {
+            // id가 'my-header'인 요소를 가져옴
+            var header = document.getElementById('my-header');
+            // 인터넷 익스플로러에서 실행하는 경우
+            if (header.attachEvent) {
+                // 클릭 이벤트 핸들러 함수
+                var handler = function () {
+                    // 클릭한 요소의 글자 색상을 빨간색으로 변경
+                    window.event.srcElement.style.color = 'red';
+                    // 클릭 이벤트 제거
+                    window.event.srcElement.detachEvent('onclick', handler);
+                };
+                // 클릭 이벤트 연결
+                header.attachEvent('onclick', handler);
+            } else {
+                // 그 이외의 브라우저에서 실행하는 경우
+                // 클릭 이벤트 핸들러 함수
+                var handler = function () {
+                    // 클릭한 요소의 글자 색상을 빨간색으로 변경
+                    this.style.color = 'red';
+                    // 클릭 이벤트 제거
+                    this.removeEventListener('click', handler);
+                };
+                // 클릭 이벤트 연결
+                header.addEventListener('click', handler);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <!-- 클릭 이벤트를 연결할 요소 -->
+    <h1 id=my-header">Click</h1>
+</body>
+
+</html>

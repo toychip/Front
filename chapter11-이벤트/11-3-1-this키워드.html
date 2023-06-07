@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        
+        window.onload = function () {
+            document.getElementById('header').onclick = function () {
+                // alert(this); // 이벤트를 발생한 객체를 찾을 수 없음
+
+                // 클릭이 되면 글씨색깔은 orange, 배경색깔은 red로 바꾸기
+                this.style.color = 'orange';
+                this.style.backgroundColor = 'red';
+                }; 
+            };
+    </script>
+</head>
+
+<body>
+    <h1 id="header">Click</h1>
+</body>
+
+</html>

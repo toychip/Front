@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        // window 객체의 onload 이벤트 핸들러 등록
+        window.onload = function () {
+            // id가 'header'인 요소에 클릭 이벤트 핸들러 등록
+            document.getElementById('header').onclick = function (e) {
+                // 이벤트 객체 생성
+                var event = e || window.event;
+                // body 요소의 내용을 모두 지움
+                document.body.innerHTML = '';
+                // 이벤트 객체의 속성을 하나씩 순회하며 body 요소에 추가
+                for (var key in event) {
+                    if (event.hasOwnProperty(key)) {
+                        document.body.innerHTML += '<p>' + key + ': ' + event[key] + '</p>';
+                    }
+                }
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <h1 id="header">Click</h1>
+</body>
+
+</html>

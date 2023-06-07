@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6장</title>
+    <script>
+        window.onload = function () {
+            // 문서 객체를 가져옵니다.
+            var buttonA = document.getElementById('button-a'); // button-a 요소를 가져옵니다.
+            var buttonB = document.getElementById('button-b'); // button-b 요소를 가져옵니다.
+            var counterA = document.getElementById('counter-a'); // counter-a 요소를 가져옵니다.
+            var counterB = document.getElementById('counter-b'); // counter-b 요소를 가져옵니다.
+            // 이벤트를 연결합니다.
+            buttonA.onclick = function () { // buttonA 클릭 시 실행될 함수를 정의합니다.
+                counterA.innerHTML = Number(counterA.innerHTML) + 1; // counterA의 innerHTML 값을 1 증가시킵니다.
+            };
+            buttonB.onclick = function () { // buttonB 클릭 시 실행될 함수를 정의합니다.
+                counterB.innerHTML = Number(counterB.innerHTML) + 1; // counterB의 innerHTML 값을 1 증가시킵니다.
+                counterA.innerHTML = Number(counterA.innerHTML) + 1; // counterA의 innerHTML 값을 1 증가시킵니다.
+            };
+        };
+
+    </script>
+</head>
+
+<body>
+    <button id="button-a"> ButtonA</button> <!-- button-a 버튼을 생성합니다. -->
+    <button id="button-b"> ButtonB</button> <!-- button-b 버튼을 생성합니다. -->
+    <h1>Button A - <span id="counter-a">0</span></h1> <!-- counter-a를 표시할 h1 요소를 생성합니다. -->
+    <h1>Button B - <span id="counter-b">0</span></h1> <!-- counter-b를 표시할 h1 요소를 생성합니다. -->
+</body>
+
+</html>
