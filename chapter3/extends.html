@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        // Person 클래스 생성
+        class Person {
+            // 생성자 함수
+            constructor(name, age, tel) {
+                this._name = name;
+                this._age = age;
+                this._tel = tel;
+            }
+
+            // name getter
+            get name() {
+                return this._name;
+            }
+
+            // name setter
+            set name(newName) {
+                this._name = newName;
+            }
+
+            // age getter
+            get age() {
+                return this._age;
+            }
+
+            // age setter
+            set age(newAge) {
+                this._age = newAge;
+            }
+
+            // tel getter
+            get tel() {
+                return this._tel;
+            }
+
+            // tel setter
+            set tel(newTel) {
+                this._tel = newTel;
+            }
+        }
+
+        // Person 클래스를 상속받는 Student 클래스 생성
+        class Student extends Person {
+            // 생성자 함수
+            constructor(name, age, tel, sid) {
+                // 부모 클래스의 생성자 함수 호출
+                super(name, age, tel);
+                this._sid = sid;
+            }
+
+            // sid getter
+            get sid() {
+                return this._sid;
+            }
+
+            // sid setter
+            set sid(newSid) {
+                this._sid = newSid;
+            }
+
+            // 객체 정보를 문자열로 반환하는 메소드
+            toString() {
+                return `Name:${this.name}, Age:${this.age}, Tel:${this.tel}, SID:${this.sid}`;
+            }
+        }
+
+        // 출력할 문자열 초기화
+        let out = "Original\n";
+
+        // Student 객체 생성
+        var e1 = new Student("Scott", "21", "0101234567", "s20212222");
+        // 객체 정보를 문자열로 변환하여 출력할 문자열에 추가
+        out += e1.toString() + "\n";
+
+        // 출력할 문자열에 추가
+        out += "Change Name\n";
+        // name 속성 변경
+        e1.name = "Bill";
+        // 객체 정보를 문자열로 변환하여 출력할 문자열에 추가
+        out += e1.toString() + "\n";
+
+        // 출력할 문자열에 추가
+        out += "Change Sid\n";
+        // sid 속성 변경
+        e1.sid = "S20211234";
+        // 객체 정보를 문자열로 변환하여 출력할 문자열에 추가
+        out += e1.toString() + "\n";
+
+        // 출력할 문자열을 알림창으로 출력
+        alert(out);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Problem 1</title>
+    <style>
+        /* 'name' 클래스와 첫 번째 열의 스타일을 지정합니다. */
+        .name,
+        th:first-child {
+            color: blue;
+        }
+
+        /* 'programming' 클래스의 스타일을 지정합니다. */
+        .programming {
+            color: green;
+        }
+
+        /* 모든 헤더의 배경색을 회색으로 지정합니다. */
+        th {
+            background-color: gray;
+        }
+    </style>
+    <script>
+        function createTable() {
+            // 'table' 태그를 생성합니다.
+            var table = document.createElement('table');
+
+            // 첫 번째 행 (헤더)을 생성합니다.
+            var row1 = document.createElement('tr');
+            var header1 = document.createElement('th');
+            var header2 = document.createElement('th');
+
+            header1.innerHTML = "이름";
+            header2.innerHTML = "프로그래밍";
+
+            row1.appendChild(header1);
+            row1.appendChild(header2);
+            table.appendChild(row1);
+
+            // 나머지 행을 생성합니다.
+            var names = ["홍길동", "김초록", "윤하린", "김영웅", "박영희"];
+            var languages = ["Ruby", "Python", "C#", "JAVA", "C"];
+
+            for (var i = 0; i < names.length; i++) {
+                var row = document.createElement('tr');
+                var cell1 = document.createElement('td');
+                var cell2 = document.createElement('td');
+
+                cell1.innerHTML = names[i];
+                cell1.className = "name";  // 'name' 클래스를 추가합니다.
+                cell2.innerHTML = languages[i];
+                cell2.className = "programming";  // 'programming' 클래스를 추가합니다.
+
+                row.appendChild(cell1);
+                row.appendChild(cell2);
+                table.appendChild(row);
+            }
+
+            // 생성한 테이블을 body에 추가합니다.
+            document.body.appendChild(table);
+        }
+
+        window.onload = function () {
+            // "header"라는 ID를 가진 h1 요소를 가져와서 클릭하면 createTable 함수가 실행되도록 합니다.
+            var header = document.getElementById('header');
+            header.onclick = createTable;
+        };
+    </script>
+</head>
+
+<body>
+    <h1 id="header">Click</h1>
+</body>
+
+</html>

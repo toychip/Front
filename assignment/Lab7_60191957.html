@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lab7_60191957</title>
+    <style>
+
+    </style>
+    <script>
+        function changeColor() {
+            var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            this.style.color = randomColor;
+        }
+
+        function changeText() {
+            this.textContent = 'Lab7';
+        }
+
+        function blink() {
+            var dataBlinkingAttribute = this.getAttribute('data-blinking');
+            var isBlinking;
+
+            if (dataBlinkingAttribute === 'true') { // data-blinking 속성이 true인 경우
+                isBlinking = true; // isBlinking 변수에 true 할당
+            } else {
+                isBlinking = false; // isBlinking 변수에 false 할당
+            }
+            if (isBlinking) { // isBlinking 변수가 true인 경우
+                this.setAttribute('data-blinking', 'false'); // data-blinking 속성을 false로 변경
+                clearInterval(this.blinkInterval); // blinkInterval 변수에 할당된 setInterval 함수 제거
+                this.style.visibility = 'visible'; // 현재 요소의 visibility 속성을 visible로 변경
+            } else { // isBlinking 변수가 false인 경우
+                this.setAttribute('data-blinking', 'true'); // data-blinking 속성을 true로 변경
+                this.blinkInterval = setInterval(function () { // blinkInterval 변수에 setInterval 함수 할당
+                    if (this.style.visibility === 'hidden') { // 현재 요소의 visibility 속성이 hidden인 경우
+                        this.style.visibility = 'visible'; // visibility 속성을 visible로 변경
+                    } else {
+                        this.style.visibility = 'hidden'; // visibility 속성을 hidden으로 변경
+                    }
+                }.bind(this), 500); // 0.5초마다 실행되는 setInterval 함수
+            }
+        }
+
+        function incrementCounter() {
+            var counterElement = document.getElementById('counter'); // id가 counter인 요소를 찾아 변수에 할당
+            var currentCount = parseInt(counterElement.textContent); // counterElement의 textContent를 정수형으로 변환하여 currentCount 변수에 할당
+            counterElement.textContent = currentCount + 1; // counterElement의 textContent를 1 증가시킨 값으로 변경
+        }
+
+        function createElements() {
+            for (var i = 1; i <= 4; i++) { // 1부터 4까지 반복
+                var container = document.createElement('div'); // div 요소 생성
+                container.className = 'container'; // container 클래스 추가
+
+                var element = document.createElement('p'); // p 요소 생성
+                element.id = 'element' + i; // id 속성에 element와 i를 결합한 값을 할당
+                element.textContent = 'Junhyoung'; // textContent에 Junhyoung 할당
+
+                container.appendChild(element); // container 요소에 element 요소 추가
+                document.body.appendChild(container); // body 요소에 container 요소 추가
+            }
+
+            var counterElement = document.createElement('p'); // p 요소 생성
+            counterElement.id = 'counter'; // id 속성에 counter 할당
+            counterElement.textContent = '0'; // textContent에 0 할당
+            document.body.appendChild(counterElement); // body 요소에 counterElement 요소 추가
+
+            document.getElementById('element1').addEventListener('click', changeColor); // id가 element1인 요소에 click 이벤트 발생 시 changeColor 함수 실행
+            document.getElementById('element2').addEventListener('click', changeText); // id가 element2인 요소에 click 이벤트 발생 시 changeText 함수 실행
+            document.getElementById('element3').addEventListener('click', blink); // id가 element3인 요소에 click 이벤트 발생 시 blink 함수 실행
+            document.getElementById('element4').addEventListener('click', incrementCounter); // id가 element4인 요소에 click 이벤트 발생 시 incrementCounter 함수 실행
+        }
+
+        window.onload = createElements; // window 객체의 onload 이벤트 발생 시 createElements 함수 실행
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

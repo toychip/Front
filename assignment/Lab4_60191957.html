@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        // makeSquare 함수 정의
+        function makeSquare(leftX, leftY, rightX, rightY) {
+
+            // 매개변수가 없을 경우 기본값 설정
+            leftX = leftX || 10;
+            leftY = leftY || 10;
+            rightX = rightX || 100;
+            rightY = rightY || 100;
+
+            // 객체 생성
+            var howReturn = {
+                leftofX: leftX,
+                leftofY: leftY,
+                rightofX: rightX,
+                rightofY: rightY,
+
+                // 넓이 구하는 메소드
+                getArea: function () {
+                    return Area = Math.abs(this.leftofX - this.rightofX) * Math.abs(this.leftofY - this.rightofY);
+                },
+
+                // 둘레 구하는 메소드
+                getCircumstance: function () {
+                    return Cicumstance = Math.abs(this.leftofX - this.rightofX) * 2 + Math.abs(this.leftofY - this.rightofY) * 2;
+                },
+
+                // 문자열 반환하는 메소드
+                toString: function () {
+                    return 'Area: (' + this.rightofX + ',' + this.leftofY + ') to (' + this.rightofX + ',' + this.rightofY +
+                        ') = ' + this.getArea() + '\n' +
+                        'Circumstance:(' + this.leftofX + ',' + this.leftofY + ') to ('
+                        + this.rightofX + ',' + this.rightofY + ') = ' + this.getCircumstance();
+                }
+            };
+            return howReturn;
+        }
+
+        // 객체 배열 생성
+        var square = [];
+
+        // 객체 생성 후 배열에 추가
+        square.push(makeSquare(100, 200, 150, 250))
+
+        // 객체 배열 출력
+        for (var i in square) {
+            alert('Area and Circumstance\n\n' + square[i].toString());
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

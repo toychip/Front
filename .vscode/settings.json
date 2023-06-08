@@ -1,2 +1,4 @@
 {
+    "easycode.maxTokens": 2000,
+    "easycode.model": "gpt-4"
 }

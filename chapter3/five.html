@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Final Exam</title>
+    <script>
+        window.onload = function () {
+            for (var i = 1; i <= 5; i++) {
+                // 새로운 <a> 태그를 생성합니다.
+                var link = document.createElement('a');
+
+                // 생성한 <a> 태그의 href 속성을 설정합니다.
+                link.href = 'problem' + i + '.html';
+
+                // 생성한 <a> 태그의 텍스트를 설정합니다.
+                link.textContent = 'Problem' + i;
+
+                // <br> 태그를 생성하여 줄바꿈을 만들어 줍니다.
+                var br = document.createElement('br');
+
+                // body 태그에 생성한 <a> 태그를 추가합니다.
+                document.body.appendChild(link);
+                document.body.appendChild(br); // 줄바꿈 추가
+            }
+        };
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>60191957 임준형 인터넷프로그래밍 6주차 과제</title>
+    <script>
+        window.onload = function () {
+            // id가 redbox인 div 요소를 가져와 redBox 변수에 할당
+            var redBox = document.getElementById('redbox');
+            // id가 bluebox인 div 요소를 가져와 blueBox 변수에 할당
+            var blueBox = document.getElementById('bluebox');
+
+            // 빨간 상자의 수평 위치를 저장하는 변수
+            var redHorizontal = 0;
+            // 빨간 상자의 수직 위치를 저장하는 변수
+            var redVertical = 0;
+            // 파란 상자의 수평 위치를 저장하는 변수
+            var blueHorizontal = 0;
+            // 파란 상자의 수직 위치를 저장하는 변수
+            var blueVertical = 0;
+
+            // 빨간 상자를 이동시키는 함수
+            function redMove() {
+                // 빨간 상자의 수평 위치를 1씩 증가시킴
+                redHorizontal = redHorizontal + 1;
+                // 빨간 상자의 수직 위치를 1씩 증가시킴
+                redVertical = redVertical + 1;
+                // 빨간 상자의 left 속성 값을 변경하여 수평 이동
+                redBox.style.left = redHorizontal + 'px';
+                // 빨간 상자의 top 속성 값을 변경하여 수직 이동
+                redBox.style.top = redVertical + 'px';
+            }
+
+            // 파란 상자를 이동시키는 함수
+            function blueMove() {
+                // 파란 상자의 수평 위치를 1씩 증가시킴
+                blueHorizontal = blueHorizontal + 1;
+                // 파란 상자의 수직 위치를 1씩 증가시킴
+                blueVertical = blueVertical + 1;
+                // 파란 상자의 right 속성 값을 변경하여 수평 이동
+                blueBox.style.right = blueHorizontal + 'px';
+                // 파란 상자의 top 속성 값을 변경하여 수직 이동
+                blueBox.style.top = blueVertical + 'px';
+            }
+
+            // 일정 시간마다 redMove 함수를 호출하여 빨간 상자를 이동시킴
+            setInterval(redMove, 5);
+            // 일정 시간마다 blueMove 함수를 호출하여 파란 상자를 이동시킴
+            setInterval(blueMove, 5);
+        }
+    </script>
+
+
+    <style>
+        /* 빨간 상자 스타일 */
+        #redbox {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+
+        /* 파란 상자 스타일 */
+        #bluebox {
+            width: 100px;
+            height: 100px;
+            right: 0px;
+            position: absolute;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 빨간 상자 -->
+    <div id="redbox"></div>
+    <!-- 파란 상자 -->
+    <div id="bluebox"></div>
+</body>
+
+</html>

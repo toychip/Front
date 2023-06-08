@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Problem 1</title>
+    <script>
+        window.onload = function () {
+            // 'header' ID를 가진 요소에 click 이벤트 핸들러를 등록합니다.
+            document.getElementById('header').onclick = function () {
+                // 테이블과 테이블 헤더를 생성합니다.
+                var table = document.createElement('table'); // 테이블 생성
+                var headerRow = document.createElement('tr'); // 테이블 헤더 생성
+                var nameHeader = document.createElement('th'); // 이름 헤더 생성
+                nameHeader.textContent = '이름'; // 이름 헤더에 '이름' 텍스트 추가
+                var languageHeader = document.createElement('th'); // 프로그래밍 헤더 생성
+                languageHeader.textContent = '프로그래밍'; // 프로그래밍 헤더에 '프로그래밍' 텍스트 추가
+
+                headerRow.appendChild(nameHeader); // 이름 헤더를 테이블 헤더 행에 추가
+                headerRow.appendChild(languageHeader); // 프로그래밍 헤더를 테이블 헤더 행에 추가
+                table.appendChild(headerRow); // 테이블 헤더 행을 테이블에 추가
+
+                // 테이블의 각 행을 생성하고 데이터를 추가합니다.
+                var data = [
+                    ['홍길동', 'Ruby'],
+                    ['김초록', 'Python'],
+                    ['윤하린', 'C#'],
+                    ['김영웅', 'JAVA'],
+                    ['박영희', 'C']
+                ];
+
+                for (var i = 0; i < data.length; i++) {
+                    var row = document.createElement('tr'); // 테이블 행 생성
+                    var nameCell = document.createElement('td'); // 이름 셀 생성
+                    nameCell.textContent = data[i][0]; // 이름 셀에 이름 데이터 추가
+                    var languageCell = document.createElement('td'); // 프로그래밍 셀 생성
+                    languageCell.textContent = data[i][1]; // 프로그래밍 셀에 프로그래밍 데이터 추가
+
+                    row.appendChild(nameCell); // 이름 셀을 테이블 행에 추가
+                    row.appendChild(languageCell); // 프로그래밍 셀을 테이블 행에 추가
+                    table.appendChild(row); // 테이블 행을 테이블에 추가
+                }
+
+                // 테이블을 문서에 추가합니다.
+                document.body.appendChild(table); // 테이블을 문서 body에 추가
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <h1 id="header">Click</h1>
+</body>
+
+</html>
